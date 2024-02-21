@@ -29,7 +29,7 @@ public class StudentTwo {
         for(Integer i : grades){
             sum += i;
         }
-        avgGr = (double) (sum / this.getGrades().size());
+        avgGr = (double) (sum / grades.size());
         return avgGr;
     }
     public String getName() {
@@ -101,7 +101,7 @@ public class StudentTwo {
     }
     public static ArrayList<StudentTwo> removeStudent(ArrayList<StudentTwo> students) {
         return students.stream()
-                .filter(student -> student.getAvgGr() > 3.0)
+                .filter(student -> student.getAvgGr() >= 3.0)
                 .peek(student -> student.setCourse(student.getCourse() +1))
                 .collect(Collectors.toCollection(ArrayList::new)); // создается новый список, а не перезаписывается старый
 

@@ -113,7 +113,7 @@ public class Student {
 //        return students;
 
         return students.stream()
-                .filter(student -> student.getGradeAvg() > 3.0)
+                .filter(student -> student.getGradeAvg() >= 3.0)
                 .peek(student -> student.setCourse(student.getCourse() +1))
                 .collect(Collectors.toCollection(ArrayList::new)); // создается новый список, а не перезаписывается старый
 
